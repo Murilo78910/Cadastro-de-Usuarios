@@ -1,0 +1,92 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bem-vindo</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'usuarios/css/styles.css' %}">
+</head>
+<body>
+    <div id="div1" class="page">
+        <div id="div2" class="formLogin">
+            <h1 style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Bem-vindo, {{ usuario.nome }}!</h1>
+
+            <p style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Email: {{ usuario.email }}</p>
+
+            <p style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Idade: {{ usuario.idade }}</p>
+
+            <button id="bt1"><a href="{% url 'editar_usuario' %}" style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; text-decoration: none; color: white;">Editar Usuário</a></button>
+
+            <form method="post" action="{% url 'deletar_usuario' %}" >
+                {% csrf_token %}
+                <input id="bt2" type="submit" value="Deletar Usuário" class="btn" style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; text-decoration: none; color: white;" />
+
+            </form>
+            <button id="bt3"><a style="text-decoration: none; color: white; font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" href="{% url 'index' %}" class="btn">Sair</a></button>
+        </div>
+    </div>
+
+</body>
+
+
+<style>
+    body{
+        background-color: aqua;
+    }
+
+    #div1{
+        background-color: white;
+        text-align: center;
+        width: 50%;
+        height: 80%;
+        margin-left: 25%;
+        margin-top: 5%;
+        border-radius: 20px;
+        box-shadow: 4px 4px 5px 0px rgba(39,39,39,0.6);
+    }
+
+    #bt1{
+        background-color: blue;
+        border: none;
+        color: white;
+        padding: 10px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 8px;
+    }
+
+    #bt2{
+        background-color: rgba(218, 7, 7, 0.788);
+        border: none;
+        color: white;
+        padding: 10px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 8px;
+    }
+
+    #bt3{
+        background-color: rgba(218, 197, 7, 0.911);
+        border: none;
+        color: white;
+        padding: 10px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 8px;
+    }
+
+
+</style>
+
+</html>

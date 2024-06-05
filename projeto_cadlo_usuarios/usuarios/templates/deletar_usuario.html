@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Deletar Usuário</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'usuarios/css/styles.css' %}">
+</head>
+<body>
+    <div class="page">
+        <div class="formLogin">
+            <h1>Deletar Usuário</h1>
+            <p>Tem certeza que deseja deletar o usuário {{ usuario.nome }}?</p>
+            <form method="post">
+                {% csrf_token %}
+                <input type="submit" value="Deletar" class="btn" />
+            </form>
+            <a href="{% url 'bem_vindo' %}" class="btn">Cancelar</a>
+        </div>
+    </div>
+</body>
+</html>

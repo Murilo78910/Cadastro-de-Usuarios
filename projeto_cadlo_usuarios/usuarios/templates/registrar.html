@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registrar</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap">
+</head>
+<body>
+
+    <form method="post">
+        <div class="page">
+            <form method="post" class="formLogin">
+                {% csrf_token %}
+                <div id="div1">
+                <br><br>
+                <h1 style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Registrar</h1>
+                <p style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Preencha os campos abaixo para criar uma nova conta.</p>
+                <label style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" for="nome">Nome</label>
+                <input id="nome" type="text" name="nome" placeholder="Digite seu nome" required />
+
+                <br><br>
+
+                <label style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" for="idade">Idade</label>
+                <input id="idade" type="number" name="idade" placeholder="Digite sua idade" required />
+
+                <br><br>
+
+                <label style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" for="email">E-mail</label>
+                <input id="email" type="email" name="email" placeholder="Digite seu e-mail" required />
+
+                <br><br>
+
+                <label style="font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;" for="senha">Senha</label>
+                <input id="senha" type="password" name="senha" placeholder="Digite sua senha" required />
+
+                <br><br>
+
+                <input id="botao" type="submit" value="Registrar" class="btn" />
+                <br><br><br><br>
+                </div>
+            </form>
+        </div>
+    </form>
+
+<style>
+    body{
+        background-color: aqua;
+    }
+
+    form{
+        background-color: white;
+        width: 50%;
+        height: 80%;
+        margin-left: 25%;
+        margin-top: 5%;
+        border-radius: 20px;
+        box-shadow: 4px 4px 5px 0px rgba(39,39,39,0.6);
+    }
+
+    #div1{
+        text-align: center;
+    }
+
+    #nome{
+        border-radius: none;
+        font-size: 1.0em;
+    }
+
+    #idade{
+        border-radius: none;
+        font-size: 1.0em;
+    }
+
+    #email{
+        border-radius: none;
+        font-size: 1.0em;
+    }
+
+    #senha{
+        border-radius: none;
+        font-size: 1.0em;
+    }
+
+    #botao{
+        background-color: #04AA6D; /* Green */
+        border: none;
+        color: white;
+        padding: 10px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 8px;
+    }
+</style>
+</body>
+</html>
